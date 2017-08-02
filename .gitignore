@@ -23,3 +23,5 @@
 .rvmrc
 .env
 /public/uploads/*
+/config/database.yml
+/.idea
