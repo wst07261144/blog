@@ -1,0 +1,57 @@
+<%= form_for(article) do |f| %>
+  <% if article.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</h2>
+
+      <ul>
+      <% article.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image %>
+    <%= f.text_field :image %>
+  </div>
+
+  <div class="field">
+    <%= f.label :summary %>
+    <%= f.text_field :summary %>
+  </div>
+
+  <div class="field">
+    <%= f.label :content %>
+    <%= f.text_field :content %>
+  </div>
+
+  <div class="field">
+    <%= f.label :read_count %>
+    <%= f.number_field :read_count %>
+  </div>
+
+  <div class="field">
+    <%= f.label :user_id %>
+    <%= f.number_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :status %>
+    <%= f.number_field :status %>
+  </div>
+
+  <div class="field">
+    <%= f.label :top %>
+    <%= f.check_box :top %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
