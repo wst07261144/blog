@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root to: 'articles#index'
+
   resources :users
   resources :categories
   resources :tags
