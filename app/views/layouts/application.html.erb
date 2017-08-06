@@ -23,7 +23,13 @@
   </head>
 
   <body>
+    <%#= render 'layouts/header' %>
+    <%= render 'layouts/navigation_bar' %>
+
     <%= yield %>
+
+    <%= render 'layouts/footer' %>
+
     <%= javascript_include_tag params[:controller] if ::Rails.application.assets.find_asset("#{params[:controller]}.js") %>
     <%= yield :javascript %>
   </body>
