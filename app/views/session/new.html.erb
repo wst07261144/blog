@@ -1,0 +1,23 @@
+<%= raw(show_flash) %>
+<%= form_for @user, {html: {class: 'form-horizontal margin-t-100'}, url: {action: :create} } do |f| %>
+
+    <div class="form-group">
+      <%= f.label :email, '账号', class: 'col-sm-2 control-label' %>
+      <div class="col-sm-8">
+        <%= f.text_field :email, class: 'form-control'  %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :email, '密码', class: 'col-sm-2 control-label' %>
+      <div class="col-sm-8">
+        <%= f.password_field :password, class: 'form-control'  %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <%= f.submit '登录', class: 'btn btn-default' %>
+      </div>
+    </div>
+<% end %>

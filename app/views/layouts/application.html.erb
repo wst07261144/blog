@@ -19,16 +19,24 @@
     <%= stylesheet_link_tag params[:controller] if (::Rails.application.assets || ::Sprockets::Railtie.build_environment(Rails.application)).find_asset("#{params[:controller]}.css") %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': true  %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': true %>
   </head>
 
   <body>
-    <%#= render 'layouts/header' %>
-    <%= render 'layouts/navigation_bar' %>
 
-    <%= yield %>
+    <div id="wrapper" class="<%= params[:controller] %>.<%= params[:action] %>">
 
-    <%= render 'layouts/footer' %>
+      <%= render 'layouts/navigation_bar' %>
+
+      <div id="page-wrapper" class="gray-bg <%= @extra_class %>">
+
+        <%= yield %>
+
+      </div>
+
+      <%= render 'layouts/footer' %>
+
+    </div>
 
     <%= javascript_include_tag params[:controller] if (::Rails.application.assets || ::Sprockets::Railtie.build_environment(Rails.application)).find_asset("#{params[:controller]}.js") %>
     <%= yield :javascript %>

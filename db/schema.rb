@@ -46,14 +46,6 @@ ActiveRecord::Schema.define(version: 20170805134757) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "pets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name"
-    t.text     "description", limit: 65535
-    t.string   "image"
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-  end
-
   create_table "tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -64,9 +56,9 @@ ActiveRecord::Schema.define(version: 20170805134757) do
     t.string   "name"
     t.string   "email"
     t.string   "phone"
-    t.string   "password_disgest"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.string   "password_digest"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
 end
