@@ -14,3 +14,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
+//= require ztree/jquery.ztree.core-3.5.min.js
+//= require ztree/jquery.ztree.excheck-3.5.min.js
+//= require ztree/jquery.ztree.exhide-3.5.min.js

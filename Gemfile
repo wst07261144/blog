@@ -38,6 +38,8 @@ gem 'mini_magick'
 # 获取省、市区、县区gem插件
 gem 'china_city'
 gem 'unicorn'
+gem 'ancestry'
+gem 'jquery-ztree-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
