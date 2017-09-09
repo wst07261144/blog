@@ -10,7 +10,7 @@
 
 <p id="result" style="font-size: 18px;color: red"></p>
 
-<button id="cal">开始计算</button>
+<button id="cal">计算</button>
 
 <script>
   $(document).ready(function() {
@@ -29,8 +29,26 @@
       }
       n = n * 100;
       $('#result').text(n)
-
     });
+
+      $('#article_buy_price, #article_sell_price').keydown(function(event){
+          if(event.keyCode == "13") {
+              var buy_price = parseFloat($('#article_buy_price').val());
+              var sell_price = parseFloat($('#article_sell_price').val()) * 0.98;
+              if(sell_price >= 99){
+                  n = (sell_price - buy_price - 15)/(1.4 * sell_price)
+              }else{
+                  var m = Math.ceil(99/sell_price);
+                  n1 = (m * (sell_price - buy_price) -15)/(1.4 * sell_price);
+
+                  n2 = (sell_price - buy_price - 3)/(1.4 * sell_price);
+
+                  n = n1 < n2 ? n1 : n2
+              }
+              n = n * 100;
+              $('#result').text(n)
+          }
+      });
   })
 
 </script>
